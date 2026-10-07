@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NSWER Zone | My NMIXX Fanpage</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Google Fonts for typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Cyber & Display Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Montserrat:wght@400;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Navigation -->
+    <!-- Galactic Navigation Bar -->
     <header class="navbar">
         <div class="container nav-container">
             <div class="logo">
@@ -18,112 +18,173 @@
             </div>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#members">Members</a></li>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#members">MEMBERS</a></li>
+                    <li><a href="#journey">MY JOURNEY</a></li>
+                    <li><a href="#discography">DISCOGRAPHY</a></li>
+                    <li><a href="#gallery">GALLERY</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero/Banner Section -->
+    <!-- Visual Hero Banner with image_0.png overlay -->
     <section id="home" class="hero">
+        <div class="hero-glow-overlay"></div>
         <div class="hero-content">
-            <h1>We Are NMIXX!</h1>
-            <h3>Diving into the world of MIXX POP. <br> Join the ultimate NSWER experience.</h3>
-            <a href="#members" class="btn">Meet the Group</a>
+            <h1 class="hero-title">WE ARE NMIXX!</h1>
+            <p class="hero-subtitle">Diving into the world of MIXX POP.<br>Join the ultimate NSWER experience.</p>
+            <a href="#members" class="btn-glow">EXPLORE MIXX POP ➔</a>
         </div>
     </section>
 
-    <!-- Intro Text (Similar to Avenger's welcome) -->
-    <section class="intro container">
-        <h2>Welcome to the <strong>NSWER</strong> Zone</h2>
-        <p>NMIXX is blazing a trail with their unique "MIXX POP" genre, blending two or more genres into one track for a dynamic, unpredictable sound. This page is dedicated to their talent, vocals, and performances.</p>
+    <!-- Welcoming Segment with Cyber UI panels -->
+    <section class="intro-section container">
+        <div class="intro-grid">
+            <div class="intro-text-panel">
+                <h2 class="neon-title">WELCOME TO<br><span class="gradient-text">THE NSWER ZONE</span></h2>
+                <p>NMIXX is blazing a trail with their unique "MIXX POP" genre, blending two or more genres into one track for a dynamic, unpredictable sound. This page is dedicated to their talent, vocals, and performances.</p>
+            </div>
+            <div class="visual-panel">
+                <div class="waveform-container">
+                    <span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span>
+                    <span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar text">MIXX POP PLAYBACK</span>
+                </div>
+                <div class="genre-badge">MIXX POP</div>
+            </div>
+        </div>
     </section>
 
-    <!-- Members Section (Replaces 'Services') -->
-    <section id="members" class="bg-light">
+    <!-- Holographic Member Cards (Services Section) -->
+    <section id="members" class="members-section">
         <div class="container">
-            <h2 class="section-title">The Members</h2>
-            <div class="grid-container">
-                <div class="card">
-                    <img src="https://via.placeholder.com/150" alt="Haewon">
-                    <h3>Haewon</h3>
-                    <p>Leader & Main Vocalist. Known for her incredible vocal tone and witty personality.</p>
+            <h2 class="section-title">THE MEMBERS</h2>
+            <p class="section-subtitle">The six multi-talented stars of NMIXX</p>
+            
+            <div class="members-grid">
+                <!-- Card 1: Haewon -->
+                <div class="member-card card-haewon">
+                    <div class="card-inner">
+                        <div class="photo-container">
+                            <!-- Real Member Photo Here -->
+                            <img src="haewon.jpg" alt="Haewon">
+                            <span class="card-badge">S</span>
+                        </div>
+                        <div class="card-info">
+                            <h3>HAEWON</h3>
+                            <p class="role">Leader & Main Vocalist</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="card">
-                    <img src="https://via.placeholder.com/150" alt="Lily">
-                    <h3>Lily</h3>
-                    <p>Main Vocalist. A powerhouse vocalist with a bright, energetic presence.</p>
+                
+                <!-- Card 2: Lily -->
+                <div class="member-card card-lily">
+                    <div class="card-inner">
+                        <div class="photo-container">
+                            <img src="lily.jpg" alt="Lily">
+                            <span class="card-badge">S</span>
+                        </div>
+                        <div class="card-info">
+                            <h3>LILY</h3>
+                            <p class="role">Main Vocalist</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="card">
-                    <img src="https://via.placeholder.com/150" alt="Sullyoon">
-                    <h3>Sullyoon</h3>
-                    <p>Vocalist & Dancer. Captivating visuals matched with a beautiful, stable voice.</p>
+
+                <!-- Card 3: Sullyoon -->
+                <div class="member-card card-sullyoon">
+                    <div class="card-inner">
+                        <div class="photo-container">
+                            <img src="sullyoon.jpg" alt="Sullyoon">
+                            <span class="card-badge">S</span>
+                        </div>
+                        <div class="card-info">
+                            <h3>SULLYOON</h3>
+                            <p class="role">Vocalist & Dancer</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="card">
-                    <img src="https://via.placeholder.com/150" alt="BAE">
-                    <h3>BAE</h3>
-                    <p>Vocalist & Dancer. Brings a unique, deep vocal texture and lively charm.</p>
+
+                <!-- Card 4: BAE -->
+                <div class="member-card card-bae">
+                    <div class="card-inner">
+                        <div class="photo-container">
+                            <img src="bae.jpg" alt="BAE">
+                            <span class="card-badge">S</span>
+                        </div>
+                        <div class="card-info">
+                            <h3>BAE</h3>
+                            <p class="role">Vocalist & Dancer</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="card">
-                    <img src="https://via.placeholder.com/150" alt="Jiwoo">
-                    <h3>Jiwoo</h3>
-                    <p>Rapper, Vocalist & Dancer. Delivers powerful rap verses and dynamic dance moves.</p>
+
+                <!-- Card 5: Jiwoo -->
+                <div class="member-card card-jiwoo">
+                    <div class="card-inner">
+                        <div class="photo-container">
+                            <img src="jiwoo.jpg" alt="Jiwoo">
+                            <span class="card-badge">S</span>
+                        </div>
+                        <div class="card-info">
+                            <h3>JIWOO</h3>
+                            <p class="role">Rapper, Vocalist & Dancer</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="card">
-                    <img src="https://via.placeholder.com/150" alt="Kyujin">
-                    <h3>Kyujin</h3>
-                    <p>Main Dancer, Rapper, Vocalist & Maknae. An all-rounder with unmatched stage presence.</p>
+
+                <!-- Card 6: Kyujin -->
+                <div class="member-card card-kyujin">
+                    <div class="card-inner">
+                        <div class="photo-container">
+                            <img src="kyujin.jpg" alt="Kyujin">
+                            <span class="card-badge">S</span>
+                        </div>
+                        <div class="card-info">
+                            <h3>KYUJIN</h3>
+                            <p class="role">Main Dancer, Rapper, Vocalist & Maknae</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="container">
-        <div class="about-flex">
-            <div class="about-text">
-                <h2>About <span>My Journey</span></h2>
-                <p>Welcome to my personal corner of the internet dedicated to NMIXX. I've been following their journey, streaming their genre-bending tracks, and watching them grow into incredible artists.</p>
-                <p>Being an NSWER right here in Hong Kong has been amazing, especially after getting to experience their incredible energy and vocals live during their World Tour stop in April 2026. That night completely solidified my love for their performances.</p>
-                <ul class="feature-list">
-                    <li>✨ Favorite track: (Insert your favorite track here)</li>
-                    <li>🎤 Bias: (Insert your bias here)</li>
-                    <li>💿 Favorite Album: (Insert your favorite album here)</li>
-                </ul>
+    <!-- My Journey & World Tour Section -->
+    <section id="journey" class="journey-section">
+        <div class="container journey-grid-layout">
+            <div class="journey-card ticket-glow">
+                <h3>MY NSWER JOURNEY</h3>
+                <p class="sub">HONG KONG | WORLD TOUR — APRIL 2026</p>
+                <div class="ticket-widget">
+                    <div class="ticket-art">
+                        <img src="hk_show_mini.jpg" alt="NMIXX Live performance in Hong Kong">
+                    </div>
+                    <div class="ticket-meta">
+                        <h4>HONG KONG</h4>
+                        <p class="venue">World Tour Leg</p>
+                        <span class="badge-live">LIVE</span>
+                    </div>
+                </div>
+                <p class="commentary">The Vocals, The Energy, The Unforgettable Night! Experience their live synergy and stunning vocals when the stadium shook in 2026!</p>
             </div>
-            <div class="about-image">
-                <img src="https://via.placeholder.com/500x350" alt="NMIXX Group Photo or Concert Snap">
+            
+            <div class="media-preview">
+                <div class="discography-compact" id="discography">
+                    <div class="disc-card">
+                        <div class="disc-img">📀</div>
+                        <h4>NMIXX Album</h4>
+                        <a href="#play" class="btn-compact">LIVE NOW</a>
+                    </div>
+                    <div class="disc-card" id="gallery">
+                        <div class="disc-img">📸</div>
+                        <h4>NSWER Gallery</h4>
+                        <a href="#photos" class="btn-compact sec">GALLERY</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-
-    <!-- Gallery Section (Replaces 'Portfolio') -->
-    <section id="gallery" class="bg-light">
-        <div class="container">
-            <h2 class="section-title">Gallery</h2>
-            <p style="text-align: center; margin-bottom: 2rem;">A collection of favorite moments and visual concepts.</p>
-            <div class="gallery-grid">
-                <!-- Replace placeholders with actual image URLs -->
-                <div class="gallery-item"><img src="https://via.placeholder.com/400x300?text=NMIXX+Pic+1" alt="Gallery 1"></div>
-                <div class="gallery-item"><img src="https://via.placeholder.com/400x300?text=NMIXX+Pic+2" alt="Gallery 2"></div>
-                <div class="gallery-item"><img src="https://via.placeholder.com/400x300?text=NMIXX+Pic+3" alt="Gallery 3"></div>
-                <div class="gallery-item"><img src="https://via.placeholder.com/400x300?text=NMIXX+Pic+4" alt="Gallery 4"></div>
-                <div class="gallery-item"><img src="https://via.placeholder.com/400x300?text=NMIXX+Pic+5" alt="Gallery 5"></div>
-                <div class="gallery-item"><img src="https://via.placeholder.com/400x300?text=NMIXX+Pic+6" alt="Gallery 6"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Created by a dedicated NSWER. All NMIXX rights belong to JYP Entertainment.</p>
-        </div>
-    </footer>
 
 </body>
 </html>
-
