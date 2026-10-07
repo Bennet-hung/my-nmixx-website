@@ -5,292 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NMIXX | MIXX POP Universe</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-deep: #0B090F;
-            --bg-surface: #171321;
-            --accent-neon: #FF0066;
-            --accent-cyan: #00F0FF;
-            --text-main: #FFFFFF;
-            --text-muted: #A09DB0;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-deep);
-            color: var(--text-main);
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, .display-font {
-            font-family: 'Orbitron', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        /* --- Navigation --- */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 20px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(11, 9, 15, 0.85);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 0, 102, 0.2);
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 900;
-            color: var(--text-main);
-            text-decoration: none;
-            text-shadow: 0 0 10px var(--accent-neon);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: color 0.3s, text-shadow 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-cyan);
-            text-shadow: 0 0 8px var(--accent-cyan);
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(to bottom, rgba(11,9,15,0.3), var(--bg-deep)), #1a1a2e; /* Placeholder for image */
-            position: relative;
-            padding: 0 20px;
-        }
-
-        .image-placeholder-hero {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            border: 2px dashed var(--accent-neon);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent-neon);
-            font-weight: bold;
-            z-index: -1;
-            opacity: 0.3;
-        }
-
-        .hero h1 {
-            font-size: 5rem;
-            margin-bottom: 10px;
-            color: transparent;
-            -webkit-text-stroke: 2px var(--text-main);
-            background: linear-gradient(90deg, var(--accent-neon), var(--accent-cyan));
-            -webkit-background-clip: text;
-            animation: pulse 3s infinite alternate;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin-bottom: 30px;
-        }
-
-        /* --- Global Section Padding --- */
-        section {
-            padding: 100px 10vw;
-        }
-
-        .section-header {
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            border-left: 4px solid var(--accent-neon);
-            padding-left: 15px;
-        }
-
-        /* --- Profile Cards --- */
-        .profile-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .profile-card {
-            background: var(--bg-surface);
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: transform 0.4s, box-shadow 0.4s;
-            cursor: pointer;
-        }
-
-        .profile-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(255, 0, 102, 0.2);
-            border-color: var(--accent-neon);
-        }
-
-        .card-image-placeholder {
-            height: 350px;
-            background: #2a2536;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            border-bottom: 1px solid rgba(255, 0, 102, 0.2);
-        }
-
-        .card-info {
-            padding: 20px;
-        }
-
-        .card-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 5px;
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 4px 10px;
-            background: rgba(0, 240, 255, 0.1);
-            color: var(--accent-cyan);
-            font-size: 0.75rem;
-            border-radius: 20px;
-            margin-right: 5px;
-            font-weight: 600;
-        }
-
-        /* --- Concept Gallery --- */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-        }
-
-        .gallery-item {
-            aspect-ratio: 1;
-            background: var(--bg-surface);
-            border: 1px dashed var(--text-muted);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            transition: all 0.3s;
-        }
-
-        .gallery-item:hover {
-            background: rgba(255, 0, 102, 0.1);
-            border-color: var(--accent-neon);
-        }
-
-        /* --- Discography --- */
-        .disco-flex {
-            display: flex;
-            gap: 40px;
-            overflow-x: auto;
-            padding-bottom: 20px;
-        }
-
-        .album {
-            min-width: 300px;
-            background: var(--bg-surface);
-            padding: 20px;
-            border-radius: 8px;
-        }
-
-        .album-art-placeholder {
-            width: 100%;
-            aspect-ratio: 1;
-            background: #2a2536;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-        }
-
-        /* --- Schedule --- */
-        .timeline {
-            border-left: 2px solid rgba(255, 255, 255, 0.1);
-            padding-left: 30px;
-            margin-left: 20px;
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 40px;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -37px;
-            top: 5px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--accent-cyan);
-            box-shadow: 0 0 10px var(--accent-cyan);
-        }
-
-        .timeline-date {
-            color: var(--accent-neon);
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        /* --- Footer --- */
-        footer {
-            background: #000;
-            padding: 50px 10vw;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .footer-links {
-            margin: 20px 0;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            margin: 0 15px;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: var(--text-main);
-        }
-
-        @keyframes pulse {
-            0% { text-shadow: 0 0 20px rgba(255,0,102,0.4); }
-            100% { text-shadow: 0 0 40px rgba(0,240,255,0.6); }
-        }
-    </style>
+    <!-- This line connects your separate CSS file -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -304,4 +20,133 @@
         </div>
     </nav>
 
-    <header class
+    <header class="hero">
+        <div class="image-placeholder-hero">[HERO BACKGROUND IMAGE / VIDEO GOES HERE]</div>
+        <h1>MIXX POP</h1>
+        <p>Two worlds colliding into one dynamic, unpredictable sound. Enter the ultimate digital experience.</p>
+    </header>
+
+    <section id="profiles">
+        <h2 class="section-header">The Members</h2>
+        <div class="profile-grid">
+            
+            <div class="profile-card">
+                <div class="card-image-placeholder">[Haewon Portrait 300x400]</div>
+                <div class="card-info">
+                    <h3>HAEWON</h3>
+                    <div class="badge">Leader</div>
+                    <div class="badge">Main Vocalist</div>
+                </div>
+            </div>
+
+            <div class="profile-card">
+                <div class="card-image-placeholder">[Lily Portrait 300x400]</div>
+                <div class="card-info">
+                    <h3>LILY</h3>
+                    <div class="badge">Main Vocalist</div>
+                </div>
+            </div>
+
+            <div class="profile-card">
+                <div class="card-image-placeholder">[Sullyoon Portrait 300x400]</div>
+                <div class="card-info">
+                    <h3>SULLYOON</h3>
+                    <div class="badge">Vocalist</div>
+                    <div class="badge">Dancer</div>
+                </div>
+            </div>
+
+            <div class="profile-card">
+                <div class="card-image-placeholder">[BAE Portrait 300x400]</div>
+                <div class="card-info">
+                    <h3>BAE</h3>
+                    <div class="badge">Vocalist</div>
+                    <div class="badge">Dancer</div>
+                </div>
+            </div>
+            
+            <div class="profile-card">
+                <div class="card-image-placeholder">[Jiwoo Portrait 300x400]</div>
+                <div class="card-info">
+                    <h3>JIWOO</h3>
+                    <div class="badge">Rapper</div>
+                    <div class="badge">Dancer</div>
+                </div>
+            </div>
+
+            <div class="profile-card">
+                <div class="card-image-placeholder">[Kyujin Portrait 300x400]</div>
+                <div class="card-info">
+                    <h3>KYUJIN</h3>
+                    <div class="badge">Main Dancer</div>
+                    <div class="badge">Maknae</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2 class="section-header">Concept Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">[Concept Image 1]</div>
+            <div class="gallery-item">[Concept Image 2]</div>
+            <div class="gallery-item">[Concept Image 3]</div>
+            <div class="gallery-item">[Concept Image 4]</div>
+            <div class="gallery-item">[Concept Image 5]</div>
+            <div class="gallery-item">[Concept Image 6]</div>
+            <div class="gallery-item">[Concept Image 7]</div>
+            <div class="gallery-item">[Concept Image 8]</div>
+        </div>
+    </section>
+
+    <section id="discography">
+        <h2 class="section-header">Discography</h2>
+        <div class="disco-flex">
+            <div class="album">
+                <div class="album-art-placeholder">[Album Art Square]</div>
+                <h3>Fe3O4: BREAK</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 5px;">2nd EP · 2024</p>
+            </div>
+            <div class="album">
+                <div class="album-art-placeholder">[Album Art Square]</div>
+                <h3>A Midsummer NMIXX's Dream</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 5px;">3rd Single Album · 2023</p>
+            </div>
+            <div class="album">
+                <div class="album-art-placeholder">[Album Art Square]</div>
+                <h3>expérgo</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 5px;">1st EP · 2023</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule">
+        <h2 class="section-header">Schedule & Updates</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">UPCOMING</div>
+                <h3>NMIXX Fan Meeting</h3>
+                <p style="color: var(--text-muted); margin-top: 5px;">Global Livestream Event</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">APRIL 2026</div>
+                <h3>World Tour</h3>
+                <p style="color: var(--text-muted); margin-top: 5px;">Hong Kong</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h2 class="display-font">NSWER ZONE</h2>
+        <div class="footer-links">
+            <a href="#">Official Fan Club</a>
+            <a href="#">Global Merch</a>
+            <a href="#">YouTube</a>
+            <a href="#">Instagram</a>
+        </div>
+        <p style="color: #444; font-size: 0.8rem; margin-top: 30px;">© 2026 Designed for NSWER. Unofficial fan project.</p>
+    </footer>
+
+</body>
+</html>
