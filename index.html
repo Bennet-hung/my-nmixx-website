@@ -3,188 +3,305 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NSWER Zone | My NMIXX Fanpage</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Cyber & Display Typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Montserrat:wght@400;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <title>NMIXX | MIXX POP Universe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #0B090F;
+            --bg-surface: #171321;
+            --accent-neon: #FF0066;
+            --accent-cyan: #00F0FF;
+            --text-main: #FFFFFF;
+            --text-muted: #A09DB0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .display-font {
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(11, 9, 15, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 0, 102, 0.2);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--text-main);
+            text-decoration: none;
+            text-shadow: 0 0 10px var(--accent-neon);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-cyan);
+            text-shadow: 0 0 8px var(--accent-cyan);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(11,9,15,0.3), var(--bg-deep)), #1a1a2e; /* Placeholder for image */
+            position: relative;
+            padding: 0 20px;
+        }
+
+        .image-placeholder-hero {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            border: 2px dashed var(--accent-neon);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-neon);
+            font-weight: bold;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            margin-bottom: 10px;
+            color: transparent;
+            -webkit-text-stroke: 2px var(--text-main);
+            background: linear-gradient(90deg, var(--accent-neon), var(--accent-cyan));
+            -webkit-background-clip: text;
+            animation: pulse 3s infinite alternate;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        /* --- Global Section Padding --- */
+        section {
+            padding: 100px 10vw;
+        }
+
+        .section-header {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            border-left: 4px solid var(--accent-neon);
+            padding-left: 15px;
+        }
+
+        /* --- Profile Cards --- */
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .profile-card {
+            background: var(--bg-surface);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.4s, box-shadow 0.4s;
+            cursor: pointer;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(255, 0, 102, 0.2);
+            border-color: var(--accent-neon);
+        }
+
+        .card-image-placeholder {
+            height: 350px;
+            background: #2a2536;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(255, 0, 102, 0.2);
+        }
+
+        .card-info {
+            padding: 20px;
+        }
+
+        .card-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            background: rgba(0, 240, 255, 0.1);
+            color: var(--accent-cyan);
+            font-size: 0.75rem;
+            border-radius: 20px;
+            margin-right: 5px;
+            font-weight: 600;
+        }
+
+        /* --- Concept Gallery --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1;
+            background: var(--bg-surface);
+            border: 1px dashed var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            transition: all 0.3s;
+        }
+
+        .gallery-item:hover {
+            background: rgba(255, 0, 102, 0.1);
+            border-color: var(--accent-neon);
+        }
+
+        /* --- Discography --- */
+        .disco-flex {
+            display: flex;
+            gap: 40px;
+            overflow-x: auto;
+            padding-bottom: 20px;
+        }
+
+        .album {
+            min-width: 300px;
+            background: var(--bg-surface);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .album-art-placeholder {
+            width: 100%;
+            aspect-ratio: 1;
+            background: #2a2536;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+        }
+
+        /* --- Schedule --- */
+        .timeline {
+            border-left: 2px solid rgba(255, 255, 255, 0.1);
+            padding-left: 30px;
+            margin-left: 20px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -37px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent-cyan);
+            box-shadow: 0 0 10px var(--accent-cyan);
+        }
+
+        .timeline-date {
+            color: var(--accent-neon);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: #000;
+            padding: 50px 10vw;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-links {
+            margin: 20px 0;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-main);
+        }
+
+        @keyframes pulse {
+            0% { text-shadow: 0 0 20px rgba(255,0,102,0.4); }
+            100% { text-shadow: 0 0 40px rgba(0,240,255,0.6); }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Galactic Navigation Bar -->
-    <header class="navbar">
-        <div class="container nav-container">
-            <div class="logo">
-                <a href="#home">NMIXX<span>FAN</span></a>
-            </div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#home">HOME</a></li>
-                    <li><a href="#members">MEMBERS</a></li>
-                    <li><a href="#journey">MY JOURNEY</a></li>
-                    <li><a href="#discography">DISCOGRAPHY</a></li>
-                    <li><a href="#gallery">GALLERY</a></li>
-                </ul>
-            </nav>
+    <nav>
+        <a href="#" class="logo">NMIXX</a>
+        <div class="nav-links">
+            <a href="#profiles">MEMBERS</a>
+            <a href="#gallery">GALLERY</a>
+            <a href="#discography">MUSIC</a>
+            <a href="#schedule">SCHEDULE</a>
         </div>
-    </header>
+    </nav>
 
-    <!-- Visual Hero Banner with image_0.png overlay -->
-    <section id="home" class="hero">
-        <div class="hero-glow-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-title">WE ARE NMIXX!</h1>
-            <p class="hero-subtitle">Diving into the world of MIXX POP.<br>Join the ultimate NSWER experience.</p>
-            <a href="#members" class="btn-glow">EXPLORE MIXX POP ➔</a>
-        </div>
-    </section>
-
-    <!-- Welcoming Segment with Cyber UI panels -->
-    <section class="intro-section container">
-        <div class="intro-grid">
-            <div class="intro-text-panel">
-                <h2 class="neon-title">WELCOME TO<br><span class="gradient-text">THE NSWER ZONE</span></h2>
-                <p>NMIXX is blazing a trail with their unique "MIXX POP" genre, blending two or more genres into one track for a dynamic, unpredictable sound. This page is dedicated to their talent, vocals, and performances.</p>
-            </div>
-            <div class="visual-panel">
-                <div class="waveform-container">
-                    <span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span>
-                    <span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar text">MIXX POP PLAYBACK</span>
-                </div>
-                <div class="genre-badge">MIXX POP</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Holographic Member Cards (Services Section) -->
-    <section id="members" class="members-section">
-        <div class="container">
-            <h2 class="section-title">THE MEMBERS</h2>
-            <p class="section-subtitle">The six multi-talented stars of NMIXX</p>
-            
-            <div class="members-grid">
-                <!-- Card 1: Haewon -->
-                <div class="member-card card-haewon">
-                    <div class="card-inner">
-                        <div class="photo-container">
-                            <!-- Real Member Photo Here -->
-                            <img src="haewon.jpg" alt="Haewon">
-                            <span class="card-badge">S</span>
-                        </div>
-                        <div class="card-info">
-                            <h3>HAEWON</h3>
-                            <p class="role">Leader & Main Vocalist</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Card 2: Lily -->
-                <div class="member-card card-lily">
-                    <div class="card-inner">
-                        <div class="photo-container">
-                            <img src="lily.jpg" alt="Lily">
-                            <span class="card-badge">S</span>
-                        </div>
-                        <div class="card-info">
-                            <h3>LILY</h3>
-                            <p class="role">Main Vocalist</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3: Sullyoon -->
-                <div class="member-card card-sullyoon">
-                    <div class="card-inner">
-                        <div class="photo-container">
-                            <img src="sullyoon.jpg" alt="Sullyoon">
-                            <span class="card-badge">S</span>
-                        </div>
-                        <div class="card-info">
-                            <h3>SULLYOON</h3>
-                            <p class="role">Vocalist & Dancer</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 4: BAE -->
-                <div class="member-card card-bae">
-                    <div class="card-inner">
-                        <div class="photo-container">
-                            <img src="bae.jpg" alt="BAE">
-                            <span class="card-badge">S</span>
-                        </div>
-                        <div class="card-info">
-                            <h3>BAE</h3>
-                            <p class="role">Vocalist & Dancer</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 5: Jiwoo -->
-                <div class="member-card card-jiwoo">
-                    <div class="card-inner">
-                        <div class="photo-container">
-                            <img src="jiwoo.jpg" alt="Jiwoo">
-                            <span class="card-badge">S</span>
-                        </div>
-                        <div class="card-info">
-                            <h3>JIWOO</h3>
-                            <p class="role">Rapper, Vocalist & Dancer</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 6: Kyujin -->
-                <div class="member-card card-kyujin">
-                    <div class="card-inner">
-                        <div class="photo-container">
-                            <img src="kyujin.jpg" alt="Kyujin">
-                            <span class="card-badge">S</span>
-                        </div>
-                        <div class="card-info">
-                            <h3>KYUJIN</h3>
-                            <p class="role">Main Dancer, Rapper, Vocalist & Maknae</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- My Journey & World Tour Section -->
-    <section id="journey" class="journey-section">
-        <div class="container journey-grid-layout">
-            <div class="journey-card ticket-glow">
-                <h3>MY NSWER JOURNEY</h3>
-                <p class="sub">HONG KONG | WORLD TOUR — APRIL 2026</p>
-                <div class="ticket-widget">
-                    <div class="ticket-art">
-                        <img src="hk_show_mini.jpg" alt="NMIXX Live performance in Hong Kong">
-                    </div>
-                    <div class="ticket-meta">
-                        <h4>HONG KONG</h4>
-                        <p class="venue">World Tour Leg</p>
-                        <span class="badge-live">LIVE</span>
-                    </div>
-                </div>
-                <p class="commentary">The Vocals, The Energy, The Unforgettable Night! Experience their live synergy and stunning vocals when the stadium shook in 2026!</p>
-            </div>
-            
-            <div class="media-preview">
-                <div class="discography-compact" id="discography">
-                    <div class="disc-card">
-                        <div class="disc-img">📀</div>
-                        <h4>NMIXX Album</h4>
-                        <a href="#play" class="btn-compact">LIVE NOW</a>
-                    </div>
-                    <div class="disc-card" id="gallery">
-                        <div class="disc-img">📸</div>
-                        <h4>NSWER Gallery</h4>
-                        <a href="#photos" class="btn-compact sec">GALLERY</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-</body>
-</html>
+    <header class
