@@ -1,152 +1,580 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NMIXX | MIXX POP Universe</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <!-- This line connects your separate CSS file -->
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NMIXX | MIXXTOPIA</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Mixxtopia Ocean Background -->
+    <div class="ocean-drift">
+      <div class="ocean-creature whale whale-1"></div>
+      <div class="ocean-creature dolphin dolphin-1"></div>
+    </div>
     <nav>
-        <a href="#" class="logo">NMIXX</a>
-        <div class="nav-links">
-            <a href="#profiles">MEMBERS</a>
-            <a href="#gallery">GALLERY</a>
-            <a href="#discography">MUSIC</a>
-            <a href="#schedule">SCHEDULE</a>
-        </div>
+      <a href="#" class="logo-link">
+        <img
+          src="lightstick.jpeg"
+          alt="NMIXX Lightstick"
+          class="nav-logo-img"
+          onerror="this.src='https://placehold.co/50x50/1A103C/F4C4E1?text=NMIXX'"
+        />
+      </a>
+      <div class="nav-links">
+        <a href="#about">ABOUT</a>
+        <a href="#profiles">MEMBERS</a>
+        <a href="#tracks">TOP TRACKS</a>
+        <a href="#memories">MEMORIES</a>
+        <a href="#discography">MUSIC</a>
+      </div>
     </nav>
 
+    <!-- Minimalist Hero Section with Mixxtopia Artwork -->
     <header class="hero">
-        <div class="image-placeholder-hero">[HERO BACKGROUND IMAGE / VIDEO GOES HERE]</div>
-        <h1>MIXX POP</h1>
-        <p>Two worlds colliding into one dynamic, unpredictable sound. Enter the ultimate digital experience.</p>
+      <div
+        class="hero-bg"
+        style="background-image: url('mixxtopia-bg.jpeg')"
+      ></div>
+
+      <div class="hero-corner-text">
+        <h1 class="display-font">MIXXTOPIA</h1>
+        <p>
+          Two contrasting worlds colliding into one unpredictable, dynamic
+          sound.
+        </p>
+      </div>
+
+      <div class="wave-divider">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
     </header>
 
+    <!-- About Section with Multi-Photo Showcase -->
+    <section id="about" class="intro-section">
+      <h2 class="section-header">Welcome to MIXXTOPIA 🐋</h2>
+
+      <div class="about-hero-card">
+        <img
+          src="group-1.jpeg"
+          alt="NMIXX Flower Crowns"
+          class="about-main-img"
+          onerror="this.src='https://placehold.co/800x450/F4C4E1/2B1B54?text=NMIXX+Group+Photo'"
+        />
+        <div class="about-caption">
+          <h3>SQU4D Pioneers</h3>
+          <p>
+            NMIXX consists of six powerhouse members: Haewon, Lily, Sullyoon,
+            BAE, Jiwoo, and Kyujin. Debuting on February 22, 2022, with
+            <em>AD MARE</em>, they redefined modern pop.
+          </p>
+        </div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-sub-card">
+          <img
+            src="group-2.jpeg"
+            alt="NMIXX Live"
+            onerror="this.src='https://placehold.co/400x250/F4C4E1/2B1B54?text=Stage+Presence'"
+          />
+          <div class="about-sub-caption">
+            <h4>Unmatched Live Vocals</h4>
+            <p>
+              Fierce choreography paired with stable, explosive live stages.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-sub-card">
+          <img
+            src="group-3.jpeg"
+            alt="NMIXX Casual"
+            onerror="this.src='https://placehold.co/400x250/F4C4E1/2B1B54?text=The+Universe'"
+          />
+          <div class="about-sub-caption">
+            <h4>The MIXX POP Universe</h4>
+            <p>
+              Blending contrasting musical styles into a single dynamic anthem.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Top Tracks / Ranking Section -->
+    <section id="tracks">
+      <h2 class="section-header">The Most W Songs</h2>
+      <div class="ranking-list">
+        <!-- Rank 1 -->
+        <div class="rank-card">
+          <span class="rank-number">1</span>
+          <img
+            src="https://placehold.co/100x100/F4C4E1/2B1B54?text=LOUD"
+            alt="LOUD"
+            class="rank-img"
+          />
+          <div class="rank-info">
+            <h3>LOUD</h3>
+            <p>Top W Track</p>
+          </div>
+          <button class="play-btn" onclick="playTrack('loud.mp3', this)">
+            ▶
+          </button>
+        </div>
+
+        <!-- Rank 2 -->
+        <div class="rank-card">
+          <span class="rank-number">2</span>
+          <img
+            src="https://placehold.co/100x100/F4C4E1/2B1B54?text=Break+The+Wall"
+            alt="Break The Wall"
+            class="rank-img"
+          />
+          <div class="rank-info">
+            <h3>Break The Wall</h3>
+            <p>Anthem</p>
+          </div>
+          <button
+            class="play-btn"
+            onclick="playTrack('break-the-wall.mp3', this)"
+          >
+            ▶
+          </button>
+        </div>
+
+        <!-- Rank 3 -->
+        <div class="rank-card">
+          <span class="rank-number">3</span>
+          <img
+            src="https://placehold.co/100x100/F4C4E1/2B1B54?text=Blue+Valentine"
+            alt="Blue Valentine"
+            class="rank-img"
+          />
+          <div class="rank-info">
+            <h3>Blue Valentine</h3>
+            <p>Blue Valentine EP</p>
+          </div>
+          <button
+            class="play-btn"
+            onclick="playTrack('blue-valentine.mp3', this)"
+          >
+            ▶
+          </button>
+        </div>
+
+        <!-- Rank 4 -->
+        <div class="rank-card">
+          <span class="rank-number">4</span>
+          <img
+            src="https://placehold.co/100x100/F4C4E1/2B1B54?text=ADORE+U"
+            alt="ADORE U"
+            class="rank-img"
+          />
+          <div class="rank-info">
+            <h3>ADORE U</h3>
+            <p>Hit Track</p>
+          </div>
+          <button class="play-btn" onclick="playTrack('adore-u.mp3', this)">
+            ▶
+          </button>
+        </div>
+
+        <!-- Rank 5 -->
+        <div class="rank-card">
+          <span class="rank-number">5</span>
+          <img
+            src="https://placehold.co/100x100/F4C4E1/2B1B54?text=Heavy+Serenade"
+            alt="Heavy Serenade"
+            class="rank-img"
+          />
+          <div class="rank-info">
+            <h3>Heavy Serenade</h3>
+            <p>Heavy Serenade EP</p>
+          </div>
+          <button
+            class="play-btn"
+            onclick="playTrack('heavy-serenade.mp3', this)"
+          >
+            ▶
+          </button>
+        </div>
+
+        <!-- Rank 6 -->
+        <div class="rank-card">
+          <span class="rank-number">6</span>
+          <img
+            src="https://placehold.co/100x100/F4C4E1/2B1B54?text=Love+Is+Lonely"
+            alt="Love Is Lonely"
+            class="rank-img"
+          />
+          <div class="rank-info">
+            <h3>Love Is Lonely</h3>
+            <p>Fan Favorite</p>
+          </div>
+          <button
+            class="play-btn"
+            onclick="playTrack('love-is-lonely.mp3', this)"
+          >
+            ▶
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 Members 3D Flip Cards with Trivia -->
     <section id="profiles">
-        <h2 class="section-header">The Members</h2>
-        <div class="profile-grid">
-            
-            <div class="profile-card">
-                <div class="card-image-placeholder">[Haewon Portrait 300x400]</div>
-                <div class="card-info">
-                    <h3>HAEWON</h3>
-                    <div class="badge">Leader</div>
-                    <div class="badge">Main Vocalist</div>
-                </div>
+      <h2 class="section-header">The Members</h2>
+      <div class="profile-grid">
+        <div class="profile-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="My GF.jpeg" alt="Jiwoo" class="profile-img" />
+              <div class="card-info">
+                <h3>JIWOO</h3>
+                <div class="badge magenta">Rapper</div>
+                <div class="badge">Dancer</div>
+              </div>
             </div>
-
-            <div class="profile-card">
-                <div class="card-image-placeholder">[Lily Portrait 300x400]</div>
-                <div class="card-info">
-                    <h3>LILY</h3>
-                    <div class="badge">Main Vocalist</div>
-                </div>
+            <div class="card-back">
+              <h3>JIWOO</h3>
+              <div class="animal-icon">🐶</div>
+              <div class="trivia">
+                <p><strong>Loves:</strong> Ham Kimchi Stew 🍲, Snow Crab 🦀</p>
+                <p><strong>Hobbies:</strong> Nail Art 💅, Making Perfumes</p>
+                <p><strong>Hates:</strong> Vegetables 🥦, Jump Scares</p>
+              </div>
             </div>
-
-            <div class="profile-card">
-                <div class="card-image-placeholder">[Sullyoon Portrait 300x400]</div>
-                <div class="card-info">
-                    <h3>SULLYOON</h3>
-                    <div class="badge">Vocalist</div>
-                    <div class="badge">Dancer</div>
-                </div>
-            </div>
-
-            <div class="profile-card">
-                <div class="card-image-placeholder">[BAE Portrait 300x400]</div>
-                <div class="card-info">
-                    <h3>BAE</h3>
-                    <div class="badge">Vocalist</div>
-                    <div class="badge">Dancer</div>
-                </div>
-            </div>
-            
-            <div class="profile-card">
-                <div class="card-image-placeholder">[Jiwoo Portrait 300x400]</div>
-                <div class="card-info">
-                    <h3>JIWOO</h3>
-                    <div class="badge">Rapper</div>
-                    <div class="badge">Dancer</div>
-                </div>
-            </div>
-
-            <div class="profile-card">
-                <div class="card-image-placeholder">[Kyujin Portrait 300x400]</div>
-                <div class="card-info">
-                    <h3>KYUJIN</h3>
-                    <div class="badge">Main Dancer</div>
-                    <div class="badge">Maknae</div>
-                </div>
-            </div>
-
+          </div>
         </div>
+
+        <div class="profile-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="NMIXX Bae.jpeg" alt="BAE" class="profile-img" />
+              <div class="card-info">
+                <h3>BAE</h3>
+                <div class="badge magenta">Vocalist</div>
+                <div class="badge">Dancer</div>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3>BAE</h3>
+              <div class="animal-icon">🐥</div>
+              <div class="trivia">
+                <p><strong>Loves:</strong> Cookies 🍪, Persimmons 🍅</p>
+                <p><strong>Hobbies:</strong> Collecting Snacks & Berets</p>
+                <p><strong>Hates:</strong> Soggy Choco Cereal 🥣</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="NMIXX Haewon.jpeg" alt="Haewon" class="profile-img" />
+              <div class="card-info">
+                <h3>HAEWON</h3>
+                <div class="badge magenta">Leader</div>
+                <div class="badge">Main Vocalist</div>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3>HAEWON</h3>
+              <div class="animal-icon">🐻</div>
+              <div class="trivia">
+                <p><strong>Loves:</strong> Pumpkin 🎃, Americano ☕</p>
+                <p><strong>Hobbies:</strong> Reading Books 📖</p>
+                <p><strong>Fun Fact:</strong> Sharp, witty sense of humor!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="NMIXX Kyujin.jpeg" alt="Kyujin" class="profile-img" />
+              <div class="card-info">
+                <h3>KYUJIN</h3>
+                <div class="badge magenta">Main Dancer</div>
+                <div class="badge">Maknae</div>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3>KYUJIN</h3>
+              <div class="animal-icon">🐱</div>
+              <div class="trivia">
+                <p><strong>Loves:</strong> Potato Rice Cakes 🍡, Salmon 🍣</p>
+                <p><strong>Hobbies:</strong> Calligraphy ✍️, Music</p>
+                <p><strong>Hates:</strong> Cucumbers 🥒</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="NMIXX Lily.jpeg" alt="Lily" class="profile-img" />
+              <div class="card-info">
+                <h3>LILY</h3>
+                <div class="badge magenta">Main Vocalist</div>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3>LILY</h3>
+              <div class="animal-icon">🐨</div>
+              <div class="trivia">
+                <p><strong>Loves:</strong> Gamjatang 🥘, Meat Pies 🥧</p>
+                <p><strong>Hobbies:</strong> Reading Harry Potter 📚</p>
+                <p><strong>Fun Fact:</strong> A total vocal powerhouse!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img
+                src="NMIXX Sullyoon.jpeg"
+                alt="Sullyoon"
+                class="profile-img"
+              />
+              <div class="card-info">
+                <h3>SULLYOON</h3>
+                <div class="badge magenta">Vocalist</div>
+                <div class="badge">Dancer</div>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3>SULLYOON</h3>
+              <div class="animal-icon">🦌</div>
+              <div class="trivia">
+                <p><strong>Loves:</strong> Chocolate 🍫, Spicy Food 🌶️</p>
+                <p><strong>Hobbies:</strong> Dancing, Drawing 🎨</p>
+                <p><strong>Hates:</strong> Wearing Heels 👠</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="gallery">
-        <h2 class="section-header">Concept Gallery</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item">[Concept Image 1]</div>
-            <div class="gallery-item">[Concept Image 2]</div>
-            <div class="gallery-item">[Concept Image 3]</div>
-            <div class="gallery-item">[Concept Image 4]</div>
-            <div class="gallery-item">[Concept Image 5]</div>
-            <div class="gallery-item">[Concept Image 6]</div>
-            <div class="gallery-item">[Concept Image 7]</div>
-            <div class="gallery-item">[Concept Image 8]</div>
+    <!-- My Memories Section (Macau Concert Interactive Box) -->
+    <section id="memories">
+      <h2 class="section-header">My Memories with NMIXX</h2>
+      <div class="memory-grid">
+        <div class="memory-box interactive-memory" onclick="nextPhoto(this)">
+          <img
+            src="my-concert-1.jpg"
+            alt="Macau Concert Memory"
+            class="memory-img"
+            data-photos="my-concert-1.jpg, my-concert-2.jpg, my-concert-3.jpg"
+            data-index="0"
+            onerror="this.src='https://placehold.co/600x400/F4C4E1/2B1B54?text=Macau+Concert'"
+          />
+          <div class="memory-caption">
+            <h3>NMIXX 2ND FAN CONCERT 'NMIXX CHANGE UP : MIXX LAB' in MACAO</h3>
+            <p class="memory-location">📍 Macau (Click photo to change!)</p>
+            <p class="memory-desc">
+              My first concert with NMIXX. An incredible night experiencing
+              their powerful live vocals up close.
+            </p>
+          </div>
         </div>
+
+        <!-- Interactive Memory Box: [Event Name] -->
+        <div class="memory-box interactive-memory" onclick="nextPhoto(this)">
+          <img
+            src="2nd-concert-1.jpg"
+            alt="Second Concert Memory"
+            class="memory-img"
+            data-photos="2nd-concert-1.jpg, 2nd-concert-2.jpg, 2nd-concert-3.jpg"
+            data-index="0"
+            onerror="this.src='https://placehold.co/600x400/F4C4E1/2B1B54?text=Second+Concert'"
+          />
+          <div class="memory-caption">
+            <h3>
+              NMIXX 1ST WORLD TOUR [EPISODE 1: ZERO FRONTIER] IN HONG KONG
+            </h3>
+            <p class="memory-location">📍 Hong Kong (Click to change!)</p>
+            <p class="memory-desc">More closer to NMIXX! My Second Concert!</p>
+          </div>
+        </div>
+
+        <div class="memory-box">
+          <img
+            src="https://placehold.co/600x400/F4C4E1/2B1B54?text=Future+Memory+3"
+            alt="Memory 3"
+            class="memory-img"
+          />
+          <div class="memory-caption">
+            <h3>[Future Event Name / Tour]</h3>
+            <p class="memory-location">📍 [Location]</p>
+            <p class="memory-desc">
+              [Your brief description of the memory goes right here.]
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
+    <!-- Discography Section -->
     <section id="discography">
-        <h2 class="section-header">Discography</h2>
-        <div class="disco-flex">
-            <div class="album">
-                <div class="album-art-placeholder">[Album Art Square]</div>
-                <h3>Fe3O4: BREAK</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 5px;">2nd EP · 2024</p>
-            </div>
-            <div class="album">
-                <div class="album-art-placeholder">[Album Art Square]</div>
-                <h3>A Midsummer NMIXX's Dream</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 5px;">3rd Single Album · 2023</p>
-            </div>
-            <div class="album">
-                <div class="album-art-placeholder">[Album Art Square]</div>
-                <h3>expérgo</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 5px;">1st EP · 2023</p>
-            </div>
+      <h2 class="section-header">Discography</h2>
+      <div class="disco-flex">
+        <div class="album">
+          <div class="album-artwork-container">
+            <div class="vinyl"></div>
+            <img
+              src="heavy-serenade.jpg"
+              class="album-cover"
+              alt="Heavy Serenade"
+              onerror="this.src='https://placehold.co/300x300/F4C4E1/2B1B54?text=Heavy+Serenade'"
+            />
+          </div>
+          <div class="album-details">
+            <h3>Heavy Serenade</h3>
+            <p style="color: var(--text-muted-dark); font-size: 0.9rem">
+              EP ·2026-5-11
+            </p>
+          </div>
         </div>
-    </section>
 
-    <section id="schedule">
-        <h2 class="section-header">Schedule & Updates</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-date">UPCOMING</div>
-                <h3>NMIXX Fan Meeting</h3>
-                <p style="color: var(--text-muted); margin-top: 5px;">Global Livestream Event</p>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">APRIL 2026</div>
-                <h3>World Tour</h3>
-                <p style="color: var(--text-muted); margin-top: 5px;">Hong Kong</p>
-            </div>
+        <div class="album">
+          <div class="album-artwork-container">
+            <div class="vinyl"></div>
+            <img
+              src="blue-valentine.jpg"
+              class="album-cover"
+              alt="Blue Valentine"
+              onerror="this.src='https://placehold.co/300x300/F4C4E1/2B1B54?text=FORWARD'"
+            />
+          </div>
+          <div class="album-details">
+            <h3>Blue Valentine</h3>
+            <p style="color: var(--text-muted-dark); font-size: 0.9rem">
+              EP ·2025-10-13
+            </p>
+          </div>
         </div>
+
+        <div class="album">
+          <div class="album-artwork-container">
+            <div class="vinyl"></div>
+            <img
+              src="Fe304-FORWARD.jpg"
+              class="album-cover"
+              alt="Fe3O4: FORWARD"
+              onerror="this.src='https://placehold.co/300x300/F4C4E1/2B1B54?text=STICK+OUT'"
+            />
+          </div>
+          <div class="album-details">
+            <h3>Fe3O4: FORWARD</h3>
+            <p style="color: var(--text-muted-dark); font-size: 0.9rem">
+              EP · 2025-3-17
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <footer>
-        <h2 class="display-font">NSWER ZONE</h2>
-        <div class="footer-links">
-            <a href="#">Official Fan Club</a>
-            <a href="#">Global Merch</a>
-            <a href="#">YouTube</a>
-            <a href="#">Instagram</a>
-        </div>
-        <p style="color: #444; font-size: 0.8rem; margin-top: 30px;">© 2026 Designed for NSWER. Unofficial fan project.</p>
+      <h2 class="display-font">NSWER ZONE</h2>
+      <div class="footer-links">
+        <a href="https://nmixx.jype.com/">Official Site</a>
+        <a href="https://www.youtube.com/@NMIXXOfficial">YouTube</a>
+        <a href="https://www.instagram.com/nmixx_official/">Instagram</a>
+      </div>
+      <p style="color: #97a9c9; font-size: 0.8rem; margin-top: 30px">
+        © 2026 Designed for NSWER. Unofficial fan project.
+      </p>
     </footer>
 
-</body>
+    <script>
+      // --- Memory Box Photo Cycling ---
+      function nextPhoto(box) {
+        const img = box.querySelector(".memory-img");
+        const photosString = img.getAttribute("data-photos");
+
+        if (photosString) {
+          const photos = photosString.split(",").map((p) => p.trim());
+          let currentIndex = parseInt(img.getAttribute("data-index")) || 0;
+
+          currentIndex = (currentIndex + 1) % photos.length;
+
+          img.style.opacity = "0.4";
+          setTimeout(() => {
+            img.src = photos[currentIndex];
+            img.setAttribute("data-index", currentIndex);
+            img.style.opacity = "1";
+          }, 150);
+        }
+      }
+
+      // --- Music Player Logic (This is what was missing!) ---
+      let currentAudio = null;
+      let currentButton = null;
+
+      function playTrack(audioFile, btn) {
+        // If the same track is already playing, pause it
+        if (currentAudio && currentAudio.src.includes(audioFile)) {
+          if (currentAudio.paused) {
+            currentAudio.play();
+            btn.textContent = "⏸";
+          } else {
+            currentAudio.pause();
+            btn.textContent = "▶";
+          }
+          return;
+        }
+
+        // Stop any currently playing audio and reset its button
+        if (currentAudio) {
+          currentAudio.pause();
+          if (currentButton) currentButton.textContent = "▶";
+        }
+
+        // Play the new audio file
+        currentAudio = new Audio(audioFile);
+        currentButton = btn;
+
+        currentAudio
+          .play()
+          .then(() => {
+            btn.textContent = "⏸";
+          })
+          .catch((error) => {
+            alert(
+              "Audio file not found! Make sure '" +
+                audioFile +
+                "' is uploaded to your CodeSandbox sidebar."
+            );
+            btn.textContent = "▶";
+          });
+
+        // When audio finishes playing naturally, reset button
+        currentAudio.onended = function () {
+          btn.textContent = "▶";
+        };
+      }
+    </script>
+  </body>
 </html>
